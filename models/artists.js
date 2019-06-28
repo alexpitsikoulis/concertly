@@ -17,11 +17,16 @@ function getArtists() {
   return ArtistCollection.find()
 }
 
+function getArtist(artistId) {
+  return ArtistCollection.findById(artistId)
+}
+
 function addArtist(artistObject) {
   return ArtistCollection.create(artistObject)
 }
 
 module.exports = {
   getArtists,
+  getArtist,
   addArtist
 }

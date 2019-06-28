@@ -10,6 +10,13 @@ artistRouter.get('/', (req, res) => {
     })
 })
 
+artistRouter.get('/:artistId', (req, res) => {
+  artistApi.getArtist(req.params.artistId)
+    .then((artist) => {
+      res.send(artist)
+    })
+})
+
 artistRouter.post('/', (req, res) => {
   artistApi.addArtist(req.body)
     .then(() => {
