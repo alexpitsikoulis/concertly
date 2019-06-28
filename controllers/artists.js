@@ -10,6 +10,10 @@ artistRouter.get('/', (req, res) => {
     })
 })
 
+artistRouter.get('/new', (req, res) => {
+  res.render('artists/newArtistForm')
+})
+
 artistRouter.get('/:artistId', (req, res) => {
   artistApi.getArtist(req.params.artistId)
     .then((artist) => {
@@ -20,21 +24,21 @@ artistRouter.get('/:artistId', (req, res) => {
 artistRouter.post('/', (req, res) => {
   artistApi.addArtist(req.body)
     .then(() => {
-      res.send('Artist created')
+      res.redirect('/artists')
     })
 })
 
 artistRouter.put('/:artistId', (req, res) => {
   artistApi.editArtist(req.params.artistId, req.body)
     .then(() => {
-      res.send('Artist updated')
+      res.redirect(`/artists/${req.params.artistId}`)
     })
 })
 
 artistRouter.delete('/:artistId', (req, res) => {
   artistApi.deleteArtist(req.params.artistId)
     .then(() => {
-      res.send('Artist deleted')
+      res.redirect('/artists')
     })
 })
 module.exports = {
