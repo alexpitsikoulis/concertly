@@ -29,9 +29,14 @@ function editArtist(artistId, artistObject) {
   return ArtistCollection.findByIdAndUpdate(artistId, artistObject)
 }
 
+function deleteArtist(artistId) {
+  return ArtistCollection.findByIdAndDelete(artistId)
+}
+
 module.exports = {
   getArtists,
   getArtist,
   addArtist,
-  editArtist
+  editArtist,
+  deleteArtist
 }

@@ -30,6 +30,13 @@ artistRouter.put('/:artistId', (req, res) => {
       res.send('Artist updated')
     })
 })
+
+artistRouter.delete('/:artistId', (req, res) => {
+  artistApi.deleteArtist(req.params.artistId)
+    .then(() => {
+      res.send('Artist deleted')
+    })
+})
 module.exports = {
   artistRouter
 }
