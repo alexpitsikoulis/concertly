@@ -24,6 +24,12 @@ artistRouter.post('/', (req, res) => {
     })
 })
 
+artistRouter.put('/:artistId', (req, res) => {
+  artistApi.editArtist(req.params.artistId, req.body)
+    .then(() => {
+      res.send('Artist updated')
+    })
+})
 module.exports = {
   artistRouter
 }

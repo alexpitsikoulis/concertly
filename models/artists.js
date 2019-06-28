@@ -25,8 +25,13 @@ function addArtist(artistObject) {
   return ArtistCollection.create(artistObject)
 }
 
+function editArtist(artistId, artistObject) {
+  return ArtistCollection.findByIdAndUpdate(artistId, artistObject)
+}
+
 module.exports = {
   getArtists,
   getArtist,
-  addArtist
+  addArtist,
+  editArtist
 }
