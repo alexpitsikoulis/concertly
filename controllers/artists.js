@@ -6,14 +6,14 @@ const artistRouter = express.Router()
 artistRouter.get('/', (req, res) => {
   artistApi.getArtists()
     .then((artists) => {
-      res.send(artists)
+      res.render('artists/artists', {artists})
     })
 })
 
 artistRouter.get('/:artistId', (req, res) => {
   artistApi.getArtist(req.params.artistId)
     .then((artist) => {
-      res.send(artist)
+      res.render('artists/artist', {artist})
     })
 })
 
