@@ -35,6 +35,13 @@ showRouter.post('/', (req, res) => {
         })
 })
 
+showRouter.put('/:showId', (req, res) => {
+    showApi.editShow(req.params.showId, req.body)
+        .then(() => {
+            res.send('Show updated')
+        })
+})
+
 
 module.exports = {
     showRouter

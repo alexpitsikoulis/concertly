@@ -32,8 +32,12 @@ function addShowToArtist(showObject) {
     return ShowCollection.create(showObject)
 }
 
+function editShow(showId, showObject) {
+    return ShowCollection.findByIdAndUpdate(showId, showObject)
+}
 module.exports = {
     getShowsByArtist,
     getShowByArtist,
-    addShowToArtist
+    addShowToArtist,
+    editShow
 }
