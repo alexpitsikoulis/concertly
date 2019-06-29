@@ -1,10 +1,15 @@
 const mongoose = require('./connection.js')
 
 const ShowSchema = new mongoose.Schema({
-    name: String,
+    name: {
+        type: String,
+        required: true,
+        lowercase: true
+    },
     city: {
         type: String,
-        required: true
+        required: true,
+        lowercase: true
     },
     year: {
         type: Number,
@@ -19,6 +24,11 @@ function getShowsByArtist(artistId) {
     return ShowCollection.find({artistId: artistId})
 }
 
+function addShowToArtist(showObject) {
+    return ShowCollection.create(showObject)
+}
+
 module.exports = {
-    getShowsByArtist
+    getShowsByArtist,
+    addShowToArtist
 }

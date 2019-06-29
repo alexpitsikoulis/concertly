@@ -17,6 +17,14 @@ showRouter.get('/', (req, res) => {
         })
 })
 
+showRouter.post('/', (req, res) => {
+    req.body.artistId = req.params.artistId
+    showApi.addShowToArtist(req.body)
+        .then(() => {
+            res.send('Show created')
+        })
+})
+
 
 module.exports = {
     showRouter
