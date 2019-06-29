@@ -42,6 +42,12 @@ showRouter.put('/:showId', (req, res) => {
         })
 })
 
+showRouter.delete('/:showId', (req, res) => {
+    showApi.deleteShow(req.params.showId)
+        .then(() => {
+            res.send('Show deleted')
+        })
+})
 
 module.exports = {
     showRouter
