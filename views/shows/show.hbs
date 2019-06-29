@@ -1,4 +1,5 @@
 <h2><a href="/artists/{{artist._id}}">{{artist.name}}</a></h2>
+<a href="/artists/{{artist._id}}/shows">back to all shows</a>
 <h2>{{show.name}} - {{show.city}} {{show.year}}</h2>
 
 {{#if show.videoLink}}
@@ -6,6 +7,14 @@
     {{show.videoLink}}
 </div>
 {{/if}}
+
+<form action="/artists/{{artist._id}}/shows/{{show._id}}/edit" method="GET">
+    <input type="submit" value="edit show">
+</form>
+
+<form action="/artists/{{artist._id}}/shows/{{show._id}}?_method=DELETE" method="POST">
+    <input type="submit" value="delete show">
+</form>
 
 <script>
     let video = document.createElement('div')

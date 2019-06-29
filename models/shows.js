@@ -22,7 +22,7 @@ const ShowSchema = new mongoose.Schema({
 const ShowCollection = mongoose.model('Shows', ShowSchema)
 
 function getShowsByArtist(artistId) {
-    return ShowCollection.find({artistId: artistId})
+    return ShowCollection.find({artistId: artistId}).sort({year: 'ascending'})
 }
 
 function getShowByArtist(artistId, showId) {

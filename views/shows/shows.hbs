@@ -1,4 +1,6 @@
 <h2><a href="/artists/{{artist._id}}">{{artist.name}}</a> shows</h2>
+
+<a href="/artists/{{artist._id}}/shows/new">add new show</a>
 <table>
     <thead>
         <td>tour</td>
@@ -13,7 +15,3 @@
         </tr>
     {{/each}}
 </table>
-
-<form action="/artists/{{artist._id}}/shows/new" method="GET">
-    <input type="submit" value="add new show">
-</form>

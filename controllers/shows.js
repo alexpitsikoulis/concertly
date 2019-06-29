@@ -18,8 +18,17 @@ showRouter.get('/', (req, res) => {
 })
 
 showRouter.get('/new', (req, res) => {
-    let artist = req.params.artistId
-    res.render('shows/newShowForm', {artist})
+    artistApi.getArtist(req.params.artistId)
+        .then((artist) => {
+            res.render('shows/newShowForm', {artist})
+        })
+})
+
+showRouter.get('/:showId/edit', (req, res) => {
+    showApi.getShowByArtist(req.params.artistId, req.params.showId)
+        .then((show) => {
+            res.render('shows/editShowForm', {show})
+        })
 })
 
 showRouter.get('/:showId', (req, res) => {
@@ -36,21 +45,21 @@ showRouter.post('/', (req, res) => {
     req.body.artistId = req.params.artistId
     showApi.addShowToArtist(req.body)
         .then(() => {
-            res.send('Show created')
+            res.redirect(`/artists/${req.params.artistId}/shows`)
         })
 })
 
 showRouter.put('/:showId', (req, res) => {
     showApi.editShow(req.params.showId, req.body)
         .then(() => {
-            res.send('Show updated')
+            res.redirect(`/artists/${req.params.artistId}/shows/${req.params.showId}`)
         })
 })
 
 showRouter.delete('/:showId', (req, res) => {
     showApi.deleteShow(req.params.showId)
         .then(() => {
-            res.send('Show deleted')
+            res.redirect(`/artists/${req.params.artistId}`)
         })
 })
 
