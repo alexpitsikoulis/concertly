@@ -1,2 +1,15 @@
 <h2><a href="/artists/{{artist._id}}">{{artist.name}}</a></h2>
 <h2>{{show.name}} - {{show.city}} {{show.year}}</h2>
+
+{{#if show.videoLink}}
+<div id="video-embed">
+    {{show.videoLink}}
+</div>
+{{/if}}
+
+<script>
+    let video = document.createElement('div')
+    let frame = document.querySelector('#video-embed')
+    video.innerHTML = frame.innerText
+    frame.innerHTML = video.innerHTML
+</script>

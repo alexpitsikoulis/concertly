@@ -17,6 +17,11 @@ showRouter.get('/', (req, res) => {
         })
 })
 
+showRouter.get('/new', (req, res) => {
+    let artist = req.params.artistId
+    res.render('shows/newShowForm', {artist})
+})
+
 showRouter.get('/:showId', (req, res) => {
     artistApi.getArtist(req.params.artistId)
         .then((artist) => {
