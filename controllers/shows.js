@@ -9,7 +9,7 @@ showRouter.get('/', (req, res) => {
         .then((artist) => {
             showApi.getShowsByArtist(artist._id)
                 .then((shows) => {
-                    res.send(shows)
+                    res.render('shows/shows', {artist, shows})
                 })
         })
         .catch((err) => {
