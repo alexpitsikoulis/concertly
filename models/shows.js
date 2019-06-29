@@ -24,11 +24,16 @@ function getShowsByArtist(artistId) {
     return ShowCollection.find({artistId: artistId})
 }
 
+function getShowByArtist(artistId, showId) {
+    return ShowCollection.findOne({artistId: artistId, _id: showId})
+}
+
 function addShowToArtist(showObject) {
     return ShowCollection.create(showObject)
 }
 
 module.exports = {
     getShowsByArtist,
+    getShowByArtist,
     addShowToArtist
 }
