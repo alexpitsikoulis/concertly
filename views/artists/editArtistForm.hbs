@@ -1,9 +1,9 @@
-<h2>Edit Artist</h2>
+<h2>edit artist</h2>
 
 <form action="/artists/{{artist._id}}?_method=PUT" method="POST">
-    <label for="name">Name:</label>
+    <label for="name">name:</label>
         <input type="text" id="name" name="name" value="{{artist.name}}">
-    <label for="genre">Genre:</label>
+    <label for="genre">genre:</label>
         <input type="text" id="genre" name="genre" value="{{artist.genre}}">
-    <input type="submit" value="Update Artist">
+    <input type="submit" value="update artist">
 </form>

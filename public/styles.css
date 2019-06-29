@@ -12,6 +12,9 @@ a {
     text-decoration: none;
     font-size: 1.2em;
 }
+.artist-image {
+    width: 25vw;
+}
 #artists-wrapper {
     margin: 2vw auto;
 }

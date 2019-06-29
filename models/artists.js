@@ -8,11 +8,13 @@ const ArtistSchema = new mongoose.Schema({
   },
   genre: {
     type: String,
-    required: true
-  }
+    required: true,
+    lowercase: true
+  },
+  imgLink: String
 })
 
-const ArtistCollection = mongoose.model('Sample', ArtistSchema)
+const ArtistCollection = mongoose.model('Artists', ArtistSchema)
 
 function getArtists() {
   return ArtistCollection.find().sort({name: 'asc'})

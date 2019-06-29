@@ -3,7 +3,7 @@ const app = express()
 const methodOverride = require('method-override')
 
 const { artistRouter } = require('./controllers/artists.js')
-
+const { showRouter } = require('./controllers/shows.js')
 
 /* Step 3
  *
@@ -47,7 +47,7 @@ app.set('view engine', 'hbs')
  * the paths defined in the router.
  */
 app.use('/artists', artistRouter)
-
+app.use('/artists/:artistId/shows', showRouter)
 /* Step 5
  *
  * Set the port the server is to run on

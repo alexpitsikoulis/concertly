@@ -2,13 +2,17 @@
 
 <h2>{{artist.name}}</h2>
 
+{{#if artist.imgLink}}
+    <img class="artist-image" src="{{artist.imgLink}}" alt="photo of {{artist.name}}">
+{{/if}}
+
 <div>
-    Genre: {{artist.genre}}
+    genre: {{artist.genre}}
 </div>
 
 <form action="/artists/{{artist._id}}/edit" method="GET">
-    <input type="submit" value="Edit Artist">
+    <input type="submit" value="edit artist">
 </form>
 <form action="/artists/{{artist._id}}?_method=DELETE" method="POST">
-    <input type="submit" value="Delete Artist">
+    <input type="submit" value="delete artist">
 </form>
