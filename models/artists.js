@@ -3,7 +3,8 @@ const mongoose = require('./connection.js')
 const ArtistSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true
+    required: true,
+    lowercase: true
   },
   genre: {
     type: String,
@@ -14,7 +15,7 @@ const ArtistSchema = new mongoose.Schema({
 const ArtistCollection = mongoose.model('Sample', ArtistSchema)
 
 function getArtists() {
-  return ArtistCollection.find()
+  return ArtistCollection.find().sort({name: 'asc'})
 }
 
 function getArtist(artistId) {
