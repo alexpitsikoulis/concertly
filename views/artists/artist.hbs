@@ -10,6 +10,10 @@
     genre: {{artist.genre}}
 </div>
 
+<div>
+    <a href="/artists/{{artist._id}}/shows">shows</a>
+</div>
+
 <form action="/artists/{{artist._id}}/edit" method="GET">
     <input type="submit" value="edit artist">
 </form>

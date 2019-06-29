@@ -1,7 +1,15 @@
 <h2><a href="/artists/{{artist._id}}">{{artist.name}}</a> shows</h2>
-
-{{#each shows}}
-    <div>
-        {{name}} - {{city}} {{year}}
-    </div>
-{{/each}}
+<table>
+    <thead>
+        <td>tour</td>
+        <td>city</td>
+        <td>year</td>
+    </thead>
+    {{#each shows}}
+        <tr>
+            <td><a href="/artists/{{artistId}}/shows/{{_id}}">{{name}}</a></td>
+            <td>{{city}}</td>
+            <td>{{year}}</td>
+        </tr>
+    {{/each}}
+</table>

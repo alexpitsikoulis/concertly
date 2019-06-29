@@ -15,6 +15,7 @@ const ShowSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    videoLink: String,
     artistId: mongoose.Types.ObjectId
 })
 

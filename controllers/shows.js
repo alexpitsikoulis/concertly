@@ -22,7 +22,7 @@ showRouter.get('/:showId', (req, res) => {
         .then((artist) => {
             showApi.getShowByArtist(req.params.artistId, req.params.showId)
                 .then((show) => {
-                    res.send(show)
+                    res.render('shows/show', {artist, show})
                 })
         })
 })
