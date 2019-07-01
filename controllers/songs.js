@@ -32,6 +32,13 @@ songRouter.put('/:songId', (req, res) => {
             res.send('song updated')
         })
 })
+
+songRouter.delete('/:songId', (req, res) => {
+    songApi.deleteSong(req.params.songId)
+        .then(() => {
+            res.send('song deleted')
+        })
+})
 module.exports = {
     songRouter
 }
