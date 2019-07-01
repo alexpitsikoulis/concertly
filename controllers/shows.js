@@ -59,7 +59,7 @@ showRouter.put('/:showId', (req, res) => {
 showRouter.delete('/:showId', (req, res) => {
     showApi.deleteShow(req.params.showId)
         .then(() => {
-            res.redirect(`/artists/${req.params.artistId}`)
+            res.redirect(`/artists/${req.params.artistId}/shows`)
         })
 })
 
