@@ -23,10 +23,22 @@ songRouter.get('/new', (req, res) => {
         .then((artist) => {
             showApi.getShowByArtist(req.params.artistId, req.params.showId)
                 .then((show) => {
-                res.render('songs/newSongForm', {show, artist})
+                    res.render('songs/newSongForm', {show, artist})
                 })
         })
-    
+})
+
+songRouter.get('/:songId/edit', (req, res) => {
+    artistApi.getArtist(req.params.artistId)
+        .then((artist) => {
+            showApi.getShowByArtist(req.params.artistId, req.params.showId)
+                .then((show) => {
+                    songApi.getSongByShow(req.params.showId, req.params.songId)
+                        .then((song) => {
+                            res.render('songs/editSongForm', {artist, show, song})
+                        })
+                })
+        })
 })
 
 songRouter.get('/:songId', (req, res) => {
@@ -34,7 +46,7 @@ songRouter.get('/:songId', (req, res) => {
         .then((artist) => {
             songApi.getSongByShow(req.params.showId, req.params.songId) 
                 .then((song) => {
-                res.render('songs/song', {song, artist})
+                    res.render('songs/song', {song, artist})
                 })
         })
 })
@@ -51,14 +63,14 @@ songRouter.post('/', (req, res) => {
 songRouter.put('/:songId', (req, res) => {
     songApi.editSong(req.params.songId, req.body)
         .then(() => {
-            res.send('song updated')
+            res.redirect(`/artists/${req.params.artistId}/shows/${req.params.showId}/songs/${req.params.songId}`)
         })
 })
 
 songRouter.delete('/:songId', (req, res) => {
     songApi.deleteSong(req.params.songId)
         .then(() => {
-            res.send('song deleted')
+            res.redirect(`/artists/${req.params.artistId}/shows/${req.params.showId}/songs`)
         })
 })
 module.exports = {

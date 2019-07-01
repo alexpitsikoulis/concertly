@@ -1,0 +1,11 @@
+<h2>edit <a href="/artists/{{artist._id}}/shows/{{show._id}}/songs/{{song._id}}">{{song.name}}</a></h2>
+
+<form action="/artists/{{show.artistId}}/shows/{{show._id}}/songs/{{song._id}}?_method=PUT" method="POST">
+    <label for="name">name:</label>
+        <input type="text" id="name" name="name" value="{{song.name}}">
+    <label for="album">album:</label>
+        <input type="text" id="album" name="album" value="{{song.album}}">
+    <label for="spotify-link">spotify/youtube embed link:</label>
+        <input type="text" id="spotify-link" name="spotifyLink" value="{{song.spotifyLink}}">
+    <input type="submit" value="edit song">
+</form>
