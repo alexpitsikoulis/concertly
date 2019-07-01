@@ -1,6 +1,6 @@
 <h2>{{song.name}}</h2>
-<h4>from the album {{song.album}}</h4>
-
+<h4>from the album {{song.album}} by <a href="/artists/{{artist._id}}">{{artist.name}}</a></h4>
+<a href="/artists/{{artist._id}}/shows/{{song.showId}}/songs">back to setlist</a>
 <div id="song-embed">
     {{song.spotifyLink}}
 </div>

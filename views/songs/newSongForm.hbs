@@ -1,0 +1,11 @@
+<h2>add new song for <a href="/artists/{{artist._id}}">{{artist.name}}</a> - <a href="/artists/{{artist._id}}/shows/{{show._id}}">{{show.name}}</a></h2>
+
+<form action="/artists/{{show.artistId}}/shows/{{show._id}}/songs" method="POST">
+    <label for="name">name:</label>
+        <input type="text" id="name" name="name">
+    <label for="album">album:</label>
+        <input type="text" id="album" name="album">
+    <label for="spotify-link">spotify embed link:</label>
+        <input type="text" id="spotify-link" name="spotifyLink">
+    <input type="submit" value="submit new song">
+</form>

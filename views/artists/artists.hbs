@@ -1,9 +1,10 @@
 <h2>all artists</h2>
 <a href="/artists/new">add new artist</a>
+<hr>
 <div id="artists-wrapper">
     {{#each artists}}
         <div>
-            <a href="/artists/{{_id}}">{{name}}</a>
+            <h3><a href="/artists/{{_id}}">{{name}}</a></h3>
         </div>
     {{/each}}
 </div>

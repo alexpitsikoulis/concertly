@@ -4,6 +4,10 @@ body {
     font-family: "Rubik", sans-serif;
     font-size: 1.7vw;
 }
+hr {
+    width: 80vw;
+    border: 1px solid white;
+}
 h1 {
     font-size: 2.5em;
 }
@@ -21,6 +25,9 @@ thead td {
     border-bottom: solid 5px black;
     padding: 0;
     margin: 0;
+}
+iframe {
+    margin: 10px auto;
 }
 .artist-image {
     width: 25vw;

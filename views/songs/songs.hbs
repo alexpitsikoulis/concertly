@@ -1,7 +1,8 @@
-<h2>setlist</h2>
-
+<h2>setlist for <a href="/artists/{{artist._id}}">{{artist.name}}</a> - <a href="/artists/{{artist._id}}/shows/{{show._id}}">{{show.name}}</a></h2>
+<a href="/artists/{{artist._id}}/shows/{{show._id}}/songs/new">add new song</a>
+<hr>
 {{#each songs}}
     <div>
-        <a href="/artists/{{artistId}}/shows/{{showId}}/songs/{{_id}}">{{name}}</a>
+        <h3><a href="/artists/{{artistId}}/shows/{{showId}}/songs/{{_id}}">{{name}}</a></h3>
     </div>
 {{/each}}
