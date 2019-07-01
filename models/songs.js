@@ -7,6 +7,7 @@ const SongSchema = new mongoose.Schema({
     },
     album: String,
     spotifyLink: String,
+    artistId: mongoose.Types.ObjectId,
     showId: mongoose.Types.ObjectId,
 })
 

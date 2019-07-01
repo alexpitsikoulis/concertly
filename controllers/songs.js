@@ -6,19 +6,21 @@ const songRouter = express.Router({mergeParams: true})
 
 songRouter.get('/', (req, res) => {
     songApi.getSongsByShow(req.params.showId)
-        .then((shows) => {
-            res.send(shows)
+        .then((songs) => {
+            let artist = req.params.artistId
+            res.render('songs/songs', {songs, artist})
         })
 })
 
 songRouter.get('/:songId', (req, res) => {
     songApi.getSongByShow(req.params.showId, req.params.songId) 
-        .then((show) => {
-            res.send(show)
+        .then((song) => {
+            res.render('songs/song', {song})
         })
 })
 
 songRouter.post('/', (req, res) => {
+    req.body.artistId = req.params.artistId
     req.body.showId = req.params.showId
     songApi.addSong(req.body)
         .then(() => {
