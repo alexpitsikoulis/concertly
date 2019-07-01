@@ -16,11 +16,16 @@ function getSongsByShow(showId) {
     return SongCollection.find({showId: showId})
 }
 
+function getSongByShow(showId, songId) {
+    return SongCollection.findOne({showId: showId, _id: songId})
+}
+
 function addSong(songObject) {
     return SongCollection.create(songObject)
 }
 
 module.exports = {
     getSongsByShow,
+    getSongByShow,
     addSong
 }
