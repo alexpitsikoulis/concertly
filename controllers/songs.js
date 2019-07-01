@@ -11,6 +11,13 @@ songRouter.get('/', (req, res) => {
         })
 })
 
+songRouter.post('/', (req, res) => {
+    req.body.showId = req.params.showId
+    songApi.addSong(req.body)
+        .then(() => {
+            res.send('Song created')
+        })
+})
 module.exports = {
     songRouter
 }

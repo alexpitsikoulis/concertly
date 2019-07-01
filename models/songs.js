@@ -7,7 +7,7 @@ const SongSchema = new mongoose.Schema({
     },
     album: String,
     spotifyLink: String,
-    showId: mongoose.Types.ObjectId
+    showId: mongoose.Types.ObjectId,
 })
 
 const SongCollection = mongoose.model('Songs', SongSchema)
@@ -16,6 +16,11 @@ function getSongsByShow(showId) {
     return SongCollection.find({showId: showId})
 }
 
+function addSong(songObject) {
+    return SongCollection.create(songObject)
+}
+
 module.exports = {
-    getSongsByShow
+    getSongsByShow,
+    addSong
 }
