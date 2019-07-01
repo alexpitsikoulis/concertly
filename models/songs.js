@@ -24,8 +24,13 @@ function addSong(songObject) {
     return SongCollection.create(songObject)
 }
 
+function editSong(songId, songObject) {
+    return SongCollection.findByIdAndUpdate(songId, songObject)
+}
+
 module.exports = {
     getSongsByShow,
     getSongByShow,
-    addSong
+    addSong,
+    editSong
 }

@@ -25,6 +25,13 @@ songRouter.post('/', (req, res) => {
             res.send('Song created')
         })
 })
+
+songRouter.put('/:songId', (req, res) => {
+    songApi.editSong(req.params.songId, req.body)
+        .then(() => {
+            res.send('song updated')
+        })
+})
 module.exports = {
     songRouter
 }
