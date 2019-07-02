@@ -16,6 +16,21 @@ const ArtistSchema = new mongoose.Schema({
 
 const ArtistCollection = mongoose.model('Artists', ArtistSchema)
 
+function alphabetList() {
+  return ArtistCollection.find()
+    .then((artists) => {
+      let arr = []
+      artists.forEach((artist) => {
+        arr.push(artist.name[0])
+      })
+      arr.sort()
+      let alphList = [... new Set(arr)]
+      // console.log(alphList)
+      return alphList
+    })
+}
+
+
 function getArtists() {
   return ArtistCollection.find().sort({name: 'asc'})
 }
@@ -37,6 +52,7 @@ function deleteArtist(artistId) {
 }
 
 module.exports = {
+  alphabetList,
   getArtists,
   getArtist,
   addArtist,

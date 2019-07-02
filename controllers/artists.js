@@ -13,6 +13,13 @@ artistRouter.get('/', (req, res) => {
     })
 })
 
+artistRouter.get('/test', (req, res) => {
+  artistApi.alphabetList()
+    .then((letters) => {
+      res.send(letters)
+    })
+})
+
 artistRouter.get('/new', (req, res) => {
   res.render('artists/newArtistForm')
 })
