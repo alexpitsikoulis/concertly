@@ -10,12 +10,12 @@
 
 <h3><a href="/artists/{{artist._id}}/shows/{{show._id}}/songs">setlist</a></h3>
 
-<form action="/artists/{{artist._id}}/shows/{{show._id}}/edit" method="GET">
-    <input type="submit" value="edit show">
+<form class="center-button" action="/artists/{{artist._id}}/shows/{{show._id}}/edit" method="GET">
+    <input class="btn" type="submit" value="edit show">
 </form>
 
-<form action="/artists/{{artist._id}}/shows/{{show._id}}?_method=DELETE" method="POST">
-    <input type="submit" value="delete show">
+<form class="center-button" action="/artists/{{artist._id}}/shows/{{show._id}}?_method=DELETE" method="POST">
+    <input class="btn" type="submit" value="delete show">
 </form>
 
 <script>

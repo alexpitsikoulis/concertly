@@ -1,11 +1,25 @@
 <h2>edit artist</h2>
 
 <form action="/artists/{{artist._id}}?_method=PUT" method="POST">
-    <label for="name">name:</label>
-        <input type="text" id="name" name="name" value="{{artist.name}}">
-    <label for="genre">genre:</label>
-        <input type="text" id="genre" name="genre" value="{{artist.genre}}">
-    <label for="img-link">image link:</label>
-        <input type="text" id="img-link" name="imgLink" value="{{artist.imgLink}}">
-    <input type="submit" value="update artist">
+    <div>
+        <label for="name">name:</label>
+        <div class="input">
+            <input type="text" id="name" name="name" value="{{artist.name}}">
+        </div>
+    </div>
+    <div>
+        <label for="genre">genre:</label>
+        <div class="input">
+            <input type="text" id="genre" name="genre" value="{{artist.genre}}">
+        </div>
+    </div>
+    <div>
+        <label for="img-link">image link:</label>
+        <div class="input">
+            <input type="text" id="img-link" name="imgLink" value="{{artist.imgLink}}">
+        </div>
+    </div>
+    <div class="input">
+        <input type="submit" value="update artist">
+    </div>
 </form>

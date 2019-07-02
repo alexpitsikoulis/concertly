@@ -7,12 +7,12 @@
     {{song.spotifyLink}}
 </div>
 
-<form action="/artists/{{artist._id}}/shows/{{song.showId}}/songs/{{song._id}}/edit" method="GET">
-    <input type="submit" value="edit song">
+<form class="center-button" action="/artists/{{artist._id}}/shows/{{song.showId}}/songs/{{song._id}}/edit" method="GET">
+    <input class="btn" type="submit" value="edit song">
 </form>
 
-<form action="/artists/{{artist._id}}/shows/{{song.showId}}/songs/{{song._id}}?_method=DELETE" method="POST">
-    <input type="submit" value="delete song">
+<form class="center-button" action="/artists/{{artist._id}}/shows/{{song.showId}}/songs/{{song._id}}?_method=DELETE" method="POST">
+    <input class="btn" type="submit" value="delete song">
 </form>
 
 <script>
