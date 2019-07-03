@@ -13,12 +13,6 @@ artistRouter.get('/', (req, res) => {
     })
 })
 
-artistRouter.get('/test', (req, res) => {
-  artistApi.alphabetList()
-    .then((letters) => {
-      res.send(letters)
-    })
-})
 
 artistRouter.get('/new', (req, res) => {
   res.render('artists/newArtistForm')
@@ -44,7 +38,7 @@ artistRouter.get('/:artistId', (req, res) => {
 artistRouter.post('/', (req, res) => {
   artistApi.addArtist(req.body)
     .then(() => {
-      res.redirect('/artists')
+          res.redirect('/artists')
     })
     .catch((err) => {
       res.send(err)
