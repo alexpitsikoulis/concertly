@@ -305,5 +305,9 @@ artistApi.deleteAllArtists()
                         })
                     })
             })
+        artistApi.addArtist({
+            name: 'test',
+            genre: 'test'
+        })
     })
     
