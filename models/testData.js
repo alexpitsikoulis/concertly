@@ -305,5 +305,222 @@ artistApi.deleteAllArtists()
                         })
                     })
             })
+        artistApi.addArtist({
+            name: 'kate bush',
+            genre: 'pop',
+            imgLink: 'https://www.billboard.com/files/styles/article_main_image/public/media/kate-bush-portrait-b-billboard-1548.jpg'
+        })
+            .then((artist) => {
+                showApi.addShowToArtist({
+                    name: 'tour of life',
+                    city: 'london, uk',
+                    year: 1979,
+                    videoLink: '<iframe width="560" height="315" src="https://www.youtube.com/embed/A44wwRgzGuw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+                    artistId: artist._id
+                })
+                    .then((show) => {
+                        let kateBushSongs = [
+                            {
+                                name: 'moving',
+                                album: 'the kick inside',
+                                spotifyLink: '<iframe src="https://open.spotify.com/embed/track/1PtXEYrahu8Vg2rhpJBoqt" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                                artistId: artist._id,
+                                showId: show._id
+                            },
+                            {
+                                name: 'them heavy people',
+                                album: 'the kick inside',
+                                spotifyLink: '<iframe src="https://open.spotify.com/embed/track/1eN1L9mXLFepXpMJNSQng8" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                                artistId: artist._id,
+                                showId: show._id
+                            },
+                            {
+                                name: 'violin',
+                                album: 'never for ever',
+                                spotifyLink: '<iframe src="https://open.spotify.com/embed/track/6Q57OHrsxrgVZJa1vqSSVi" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                                artistId: artist._id,
+                                showId: show._id
+                            },
+                            {
+                                name: 'strange phenomena',
+                                album: 'the kick inside',
+                                spotifyLink: '<iframe src="https://open.spotify.com/embed/track/7FXFAvkVsZ85KzppbQzYs2" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                                artistId: artist._id,
+                                showId: show._id
+                            },
+                            {
+                                name: 'hammer horror',
+                                album: 'lionheart',
+                                spotifyLink: '<iframe src="https://open.spotify.com/embed/track/1OeyUaxsSWYqJEzH81X3ue" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                                artistId: artist._id,
+                                showId: show._id
+                            },
+                            {
+                                name: 'don\'t push your foot on the heartbrake',
+                                album: 'lionheart',
+                                spotifyLink: '<iframe src="https://open.spotify.com/embed/track/5tXDePa4VHIORiNxJmu4Xs" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                                artistId: artist._id,
+                                showId: show._id
+                            },
+                            {
+                                name: 'wow',
+                                album: 'lionheart',
+                                spotifyLink: '<iframe src="https://open.spotify.com/embed/track/1hbB7wFZ28n5vOfMEEY2Jw" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                                artistId: artist._id,
+                                showId: show._id
+                            },
+                            {
+                                name: 'feel it',
+                                album: 'the kick inside',
+                                spotifyLink: '<iframe src="https://open.spotify.com/embed/track/2XRFaX4lO7wXVbi66EoFLa" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                                artistId: artist._id,
+                                showId: show._id
+                            },
+                            {
+                                name: 'kite',
+                                album: 'the kick inside',
+                                spotifyLink: '<iframe src="https://open.spotify.com/embed/track/5oKkU6VSkFSlTx3tP5zMoO" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                                artistId: artist._id,
+                                showId: show._id
+                            },
+                            {
+                                name: 'james and the cold gun',
+                                album: 'the kick inside',
+                                spotifyLink: '<iframe src="https://open.spotify.com/embed/track/0vC2UIF6GgcQvEdQzjcmKv" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                                artistId: artist._id,
+                                showId: show._id
+                            },
+                            {
+                                name: 'oh england my lionheart',
+                                album: 'lionheart',
+                                spotifyLink: '<iframe src="https://open.spotify.com/embed/track/2YoYQZkoTmTuAs3f7ZtGpQ" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                                artistId: artist._id,
+                                showId: show._id
+                            },
+                            {
+                                name: 'wuthering heights',
+                                album: 'the kick inside',
+                                spotifyLink: '<iframe src="https://open.spotify.com/embed/track/5YSI1311X8t31PBjkBG4CZ" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                                artistId: artist._id,
+                                showId: show._id
+                            }
+                        ]
+                        kateBushSongs.forEach((song) => {
+                            songApi.addSong(song)
+                        })
+                    })
+            })
+        artistApi.addArtist({
+            name: 'waylon jennings',
+            genre: 'country',
+            imgLink: 'https://cdn.mobsocmedia.com/uploads/sites/49/20160822192927/waylon-jennings1-440x338.jpg'
+        })
+            .then((artist) => {
+                showApi.addShowToArtist({
+                    name: 'live at omaha civic auditorium',
+                    city: 'omaha, ne',
+                    year: 1979,
+                    videoLink: '<iframe width="560" height="315" src="https://www.youtube.com/embed/SKiQq_r1-3Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+                    artistId: artist._id
+                })
+                    .then((show) => {
+                        let waylonJenningsSongs = [
+                            {
+                                name: 'don\'t you think this outlaw bit\'s done gone out of hand',
+                                album: 'i\'ve always been crazy',
+                                spotifyLink: '<iframe src="https://open.spotify.com/embed/track/79M1EMwuUACX8hYUwX1uv1" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                                artistId: artist._id,
+                                showId: show._id
+                            },
+                            {
+                                name: 'are you ready for the country',
+                                album: 'are you ready for the country',
+                                spotifyLink: '<iframe src="https://open.spotify.com/embed/track/5paXckVUlnYJfUybwXrSoI" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                                artistId: artist._id,
+                                showId: show._id
+                            },
+                            {
+                                name: 'waymore\'s blues',
+                                album: 'dreaming my dreams',
+                                spotifyLink: '<iframe src="https://open.spotify.com/embed/track/0lWHgpQIg3NcVLHnEP1h4b" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                                artistId: artist._id,
+                                showId: show._id
+                            },
+                            {
+                                name: 'mammas don\'t let your babies grow up to be cowboys',
+                                album: 'waylon & willie',
+                                spotifyLink: '<iframe src="https://open.spotify.com/embed/track/7nVQ8mo77KaUvhUQzh4vMy" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                                artistId: artist._id,
+                                showId: show._id
+                            },
+                            {
+                                name: 'i\'ve always been crazy',
+                                album: 'i\'ve always been crazy',
+                                spotifyLink: '<iframe src="https://open.spotify.com/embed/track/7uCZY4H10zmzAgybEQkfmL" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                                artistId: artist._id,
+                                showId: show._id
+                            },
+                            {
+                                name: 'amanda',
+                                album: 'the ramblin\' man',
+                                spotifyLink: '<iframe src="https://open.spotify.com/embed/track/62jCWEeUEIjzli6sFPcFnK" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                                artistId: artist._id,
+                                showId: show._id
+                            },
+                            {
+                                name: 'slow rollin\' low',
+                                album: 'this time',
+                                spotifyLink: '<iframe src="https://open.spotify.com/embed/track/6MHTCbF6gHK2lDtFryxeqo" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                                artistId: artist._id,
+                                showId: show._id
+                            },
+                            {
+                                name: 'come with me',
+                                album: 'what goes around comes around',
+                                spotifyLink: '<iframe src="https://open.spotify.com/embed/track/4v6CbLj1aUnIzM2F82k8FW" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                                artistId: artist._id,
+                                showId: show._id
+                            },
+                            {
+                                name: 'a long time ago',
+                                album: 'i\'ve always been crazy',
+                                spotifyLink: '<iframe src="https://open.spotify.com/embed/track/79erUqzXzC0KjIu5VTZwpU" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                                artistId: artist._id,
+                                showId: show._id
+                            },
+                            {
+                                name: 'i\'ve been a long time leaving (but i\'ll be a long time gone)',
+                                album: 'dreaming my dreams',
+                                spotifyLink: '<iframe src="https://open.spotify.com/embed/track/0r8dEfqyiVgAPSv2Q6grMy" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                                artistId: artist._id,
+                                showId: show._id
+                            },
+                            {
+                                name: 'lookin\' for a feeling',
+                                album: 'waylon & willie',
+                                spotifyLink: '<iframe src="https://open.spotify.com/embed/track/3ysdhH7r8Xd4QqZPWeZHB5" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                                artistId: artist._id,
+                                showId: show._id
+                            },
+                            {
+                                name: 'good hearted woman',
+                                album: 'good hearted woman',
+                                spotifyLink: '<iframe src="https://open.spotify.com/embed/track/4KmAGKJbeY2DUiLInlet53" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                                artistId: artist._id,
+                                showId: show._id
+                            },
+                            {
+                                name: 'honky tonk heroes',
+                                album: 'honky tonk heroes',
+                                spotifyLink: '<iframe src="https://open.spotify.com/embed/track/1skfGDMO9162triZ8ReWR8" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
+                                artistId: artist._id,
+                                showId: show._id
+                            }
+                        ]
+                        waylonJenningsSongs.forEach((song) => {
+                            songApi.addSong(song)
+                        })
+                    })
+            })
     })
     
