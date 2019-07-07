@@ -3,7 +3,7 @@
 [Trello Board Link](https://trello.com/b/tbcYnSq2/sei-project-2)
 [Deployed App Link](https://upper-poutine-39176.herokuapp.com/)
 
-![ERD Image](./images/erd.png)
-![Wireframe Image 1](./images/Image.jpeg)
-![Wireframe Image 2](./images/Image2.jpeg)
-![Wireframe Image 3](./images/Image3.jpeg)
+![ERD Image](./images/erd.jpg)
+![Wireframe Image 1](./images/Image.jpg)
+![Wireframe Image 2](./images/Image2.jpg)
+![Wireframe Image 3](./images/Image3.jpg)
