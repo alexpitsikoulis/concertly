@@ -4,6 +4,6 @@
 [Deployed App Link](https://upper-poutine-39176.herokuapp.com/)
 
 ![ERD Image](./images/erd.jpg)
-![Wireframe Image 1](./images/Image.jpg)
+![Wireframe Image](./images/Image.jpg)
 ![Wireframe Image 2](./images/Image2.jpg)
 ![Wireframe Image 3](./images/Image3.jpg)
