@@ -79,12 +79,6 @@ artistApi.deleteAllArtists()
                                 showId: show._id
                             },
                             {
-                                name: 'i\'ve got the sex',
-                                spotifyLink: '<iframe width="560" height="315" src="https://www.youtube.com/embed/_mVYac53_3E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-                                artistId: artist._id,
-                                showId: show._id
-                            },
-                            {
                                 name: 'downtown seoul',
                                 album: 'sweden',
                                 spotifyLink: '<iframe src="https://open.spotify.com/embed/track/4N51JqNH9naopvvZUk3K98" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>',
