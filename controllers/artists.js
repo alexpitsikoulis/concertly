@@ -6,7 +6,9 @@ const artistRouter = express.Router()
 artistRouter.get('/', (req, res) => {
   artistApi.getArtists()
     .then((artists) => {
-      res.render('artists/artists', {artists})
+      res.render('artists/artists', {
+        artists
+      })
     })
     .catch((err) => {
       res.send(err)
@@ -21,14 +23,18 @@ artistRouter.get('/new', (req, res) => {
 artistRouter.get('/:artistId/edit', (req, res) => {
   artistApi.getArtist(req.params.artistId)
     .then((artist) => {
-      res.render('artists/editArtistForm', {artist})
+      res.render('artists/editArtistForm', {
+        artist
+      })
     })
 })
 
 artistRouter.get('/:artistId', (req, res) => {
   artistApi.getArtist(req.params.artistId)
     .then((artist) => {
-      res.render('artists/artist', {artist})
+      res.render('artists/artist', {
+        artist
+      })
     })
     .catch((err) => {
       res.send(err)
@@ -38,7 +44,7 @@ artistRouter.get('/:artistId', (req, res) => {
 artistRouter.post('/', (req, res) => {
   artistApi.addArtist(req.body)
     .then(() => {
-          res.redirect('/artists')
+      res.redirect('/artists')
     })
     .catch((err) => {
       res.send(err)

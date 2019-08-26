@@ -2,14 +2,19 @@ const express = require('express')
 
 const artistApi = require('../models/artists.js')
 const showApi = require('../models/shows.js')
-const showRouter = express.Router({mergeParams: true})
+const showRouter = express.Router({
+    mergeParams: true
+})
 
 showRouter.get('/', (req, res) => {
     artistApi.getArtist(req.params.artistId)
         .then((artist) => {
             showApi.getShowsByArtist(artist._id)
                 .then((shows) => {
-                    res.render('shows/shows', {artist, shows})
+                    res.render('shows/shows', {
+                        artist,
+                        shows
+                    })
                 })
         })
         .catch((err) => {
@@ -20,14 +25,18 @@ showRouter.get('/', (req, res) => {
 showRouter.get('/new', (req, res) => {
     artistApi.getArtist(req.params.artistId)
         .then((artist) => {
-            res.render('shows/newShowForm', {artist})
+            res.render('shows/newShowForm', {
+                artist
+            })
         })
 })
 
 showRouter.get('/:showId/edit', (req, res) => {
     showApi.getShowByArtist(req.params.artistId, req.params.showId)
         .then((show) => {
-            res.render('shows/editShowForm', {show})
+            res.render('shows/editShowForm', {
+                show
+            })
         })
 })
 
@@ -36,7 +45,10 @@ showRouter.get('/:showId', (req, res) => {
         .then((artist) => {
             showApi.getShowByArtist(req.params.artistId, req.params.showId)
                 .then((show) => {
-                    res.render('shows/show', {artist, show})
+                    res.render('shows/show', {
+                        artist,
+                        show
+                    })
                 })
         })
 })
